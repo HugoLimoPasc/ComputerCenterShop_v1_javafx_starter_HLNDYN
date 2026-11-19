@@ -78,9 +78,28 @@ Dupliqueu aquest bloc per a cada *issue* que completeu. Escriviu amb les vostres
 - Prova realitzada: **[Hem executat el programa i em vist que si funciona, fent un maven build
 i hem posat clean javafx:run perque arrenqui.]**
 - Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-01]**
+- *Commit* o *pull request*: **[7df597b]**
+- Explicació individual: **[què pot explicar cada integrant sobre aquesta tasca]**
+- Ús d'IA, si n'hi ha hagut: **[consulta feta, ajuda rebuda i comprovació pròpia]**
+
+
+
+### RA2-ISSUE-02 · [Implementar connector, URL i connexio*]
+
+- Estat: **comprovat**
+- Persona que l'ha iniciat: **[nom]**
+- Problema inicial: **[L'aplicació no podia connectar-se a la base de dades perquè el mètode connect() no estava implementat.]**
+- Decisió aplicada: **[Hem implementat la connexió JDBC utilitzant, conn = DriverManager.getConnection(url, user, password);]**
+- Canvis fets: **[Hem modificat el fitxer ProductDaoImplJDBC.java]**
+- Prova realitzada: **[Hem executat l'aplicació i la connexió ja no mostra l'error RA2-ISSUE-02]**
+- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-02]**
 - *Commit* o *pull request*: **[enllaç o identificador]**
 - Explicació individual: **[què pot explicar cada integrant sobre aquesta tasca]**
 - Ús d'IA, si n'hi ha hagut: **[consulta feta, ajuda rebuda i comprovació pròpia]**
+
+
+
+
 
 ## Proves que hem de poder repetir
 
@@ -91,6 +110,7 @@ i hem posat clean javafx:run perque arrenqui.]**
 | Consulta de dades | **[completeu]** | **[completeu]** | **[enllaç]** |
 | Cas d'error controlat | **[completeu]** | **[completeu]** | **[enllaç]** |
 | Operació agrupada o transacció | **[completeu]** | **[completeu]** | **[enllaç]** |
+
 
 ## Decisions i dubtes de l'equip
 
