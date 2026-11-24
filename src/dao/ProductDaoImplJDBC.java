@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.util.ArrayList;
+import java.sql.Statement;
 
 import model.Product;
 
@@ -26,7 +27,7 @@ public class ProductDaoImplJDBC implements ProductDao {
 
 		// TODO RA2-ISSUE-02: obrir la connexio amb DriverManager i guardar-la a conn.
 		// Pista: usa url, user i password, i comprova com es declara el connector al pom.xml.
-		//throw pending("RA2-ISSUE-02 pendent: implementa la connexio JDBC amb DriverManager.");
+		// throw pending("RA2-ISSUE-02 pendent: implementa la connexio JDBC amb DriverManager.");
 	}
 
 	@Override
@@ -36,12 +37,59 @@ public class ProductDaoImplJDBC implements ProductDao {
 		}
 	}
 
+
 	@Override
 	public void initSchema() throws SQLException {
-		// TODO RA2-ISSUE-03: crear products, inventory_history i l'alias STOCK_ALERT_LIMIT.
-		// Pista: resol-ho amb Statement i try-with-resources, i afegeix seed inicial si la taula es buida.
-		throw pending("RA2-ISSUE-03 pendent: implementa DDL i inicialitzacio de l'esquema.");
-	}
+		try (Statement stmt = requireConnection().createStatement()) {
+
+        // Crear la tabla de productos
+        stmt.executeUpdate(
+            "CREATE TABLE IF NOT EXISTS products (" +
+            "id IDENTITY PRIMARY KEY, " +
+            "name VARCHAR(80) NOT NULL UNIQUE, " +
+            "wholesaler_price DECIMAL(10,2) NOT NULL, " +
+            "available BOOLEAN NOT NULL, " +
+            "stock INT NOT NULL)"
+        );
+
+        // Crear la tabla del historial de inventario
+        stmt.executeUpdate(
+            "CREATE TABLE IF NOT EXISTS inventory_history (" +
+            "id IDENTITY PRIMARY KEY, " +
+            "product_id BIGINT NOT NULL, " +
+            "action VARCHAR(40) NOT NULL, " +
+            "quantity INT NOT NULL, " +
+            "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
+            "FOREIGN KEY (product_id) REFERENCES products(id))"
+        );
+
+        // Crear el alias para la alerta de stock
+        stmt.executeUpdate(
+            "CREATE ALIAS IF NOT EXISTS STOCK_ALERT_LIMIT " +
+            "FOR \"dao.ProductDaoImplJDBC.stockAlertLimit\""
+        );
+
+        // Comprobar si la tabla de productos esta vacia
+        try (ResultSet rs = stmt.executeQuery(
+                "SELECT COUNT(*) FROM products")) {
+
+            if (rs.next() && rs.getInt(1) == 0) {
+
+                // Insertar los productos iniciales
+                stmt.executeUpdate(
+                    "INSERT INTO products " +
+                    "(name, wholesaler_price, available, stock) VALUES " +
+                    "('SSD 1TB', 60.00, TRUE, 8), " +
+                    "('RAM 32GB', 90.50, TRUE, 3), " +
+                    "('Teclat mecanic', 45.00, TRUE, 6)"
+                );
+            }
+        }
+
+        System.out.println("Esquema de base de datos inicializado correctamente.");
+    }
+}
+
 
 	@Override
 	public ArrayList<Product> getInventory() throws SQLException {
