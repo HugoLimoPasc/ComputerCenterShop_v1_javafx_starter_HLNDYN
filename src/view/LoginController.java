@@ -13,7 +13,9 @@ public class LoginController {
 		try {
 			ComputerCenterShopFxApp.startSession();
 		} catch (Exception e) {
+			e.printStackTrace();
 			statusLabel.setText("No s'ha pogut obrir la connexio: " + e.getMessage());
+			
 		}
 	}
 }
