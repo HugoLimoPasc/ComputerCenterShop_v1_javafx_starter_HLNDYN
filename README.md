@@ -41,8 +41,8 @@ Marqueu una tasca quan la prova i el rastre al repositori estiguin recollits. El
 
 ### M1 · Base JDBC operativa
 
-- [ ] [RA2-ISSUE-01 · Preparar el projecte JDBC](issues/RA2-ISSUE-01-preparar-projecte-jdbc.md)
-- [ ] [RA2-ISSUE-02 · Connector, URL i connexió](issues/RA2-ISSUE-02-revisar-connector-url-connexio.md)
+- [x] [RA2-ISSUE-01 · Preparar el projecte JDBC](issues/RA2-ISSUE-01-preparar-projecte-jdbc.md)
+- [x] [RA2-ISSUE-02 · Connector, URL i connexió](issues/RA2-ISSUE-02-revisar-connector-url-connexio.md)
 - [x] [RA2-ISSUE-03 · Estructura relacional](issues/RA2-ISSUE-03-crear-estructura-relacional.md)
 
 ### M2 · Operacions relacionals principals
@@ -67,6 +67,35 @@ Marqueu una tasca quan la prova i el rastre al repositori estiguin recollits. El
 ## Registre de treball
 
 Dupliqueu aquest bloc per a cada *issue* que completeu. Escriviu amb les vostres paraules i enllaceu només proves i *commits* del vostre repositori.
+
+### RA2-ISSUE-01 · [*Preparar projecte JDBC local*]
+
+- Estat: **comprovat**
+- Persona que l'ha iniciat: **[Nerea Diego]**
+- Problema inicial: **[El projecte estava sense configurar ni executar.]**
+- Decisió aplicada: **[Hem decidit revisar la configuració del pom.xml, i hem executat el projecte.]**
+- Canvis fets: **[No hem fet ningun canvia.]**
+- Prova realitzada: **[Hem executat el programa i em vist que si funciona, fent un maven build
+i hem posat clean javafx:run perque arrenqui.]**
+- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-01]**
+- *Commit* o *pull request*: **[7df597b]**
+- Explicació individual: **[què pot explicar cada integrant sobre aquesta tasca]**
+- Ús d'IA, si n'hi ha hagut: **[consulta feta, ajuda rebuda i comprovació pròpia]**
+
+
+
+### RA2-ISSUE-02 · [Implementar connector, URL i connexio*]
+
+- Estat: **comprovat**
+- Persona que l'ha iniciat: **[nom]**
+- Problema inicial: **[L'aplicació no podia connectar-se a la base de dades perquè el mètode connect() no estava implementat.]**
+- Decisió aplicada: **[Hem implementat la connexió JDBC utilitzant, conn = DriverManager.getConnection(url, user, password);]**
+- Canvis fets: **[Hem modificat el fitxer ProductDaoImplJDBC.java]**
+- Prova realitzada: **[Hem executat l'aplicació i la connexió ja no mostra l'error RA2-ISSUE-02]**
+- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-02]**
+- *Commit* o *pull request*: **[enllaç o identificador]**
+- Explicació individual: **[què pot explicar cada integrant sobre aquesta tasca]**
+- Ús d'IA, si n'hi ha hagut: **[consulta feta, ajuda rebuda i comprovació pròpia]**
 
 ### RA2-ISSUE-03 · Estructura relacional
 
