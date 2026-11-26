@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -105,8 +106,47 @@ public class ProductDaoImplJDBC implements ProductDao {
 
 	@Override
 	public int insertProduct(Product product) throws SQLException {
-		// TODO RA2-ISSUE-04: inserir name, wholesaler_price, available i stock amb PreparedStatement.
-		throw pending("RA2-ISSUE-04 pendent: implementa insercio amb PreparedStatement.");
+
+	    if (product == null) {
+	        throw new SQLException("El producto no puede ser nulo.");
+	    }
+
+	    if (product.getName() == null || product.getName().isBlank()) {
+	        throw new SQLException("El nombre no puede estar vacio.");
+	    }
+
+	    if (product.getName().length() > 80) {
+	        throw new SQLException("El nombre no puede superar los 80 caracteres.");
+	    }
+
+	    if (product.getWholesalerPrice() == null
+	            || product.getWholesalerPrice().getValue() < 0) {
+	        throw new SQLException("El precio no puede ser nulo ni negativo.");
+	    }
+
+	    if (product.getStock() < 0) {
+	        throw new SQLException("El stock no puede ser negativo.");
+	    }
+
+	    String sql = "INSERT INTO products (name, wholesaler_price, available, stock) VALUES (?, ?, ?, ?)";
+
+	    try (PreparedStatement stmt = requireConnection().prepareStatement(sql)) {
+
+	        stmt.setString(1, product.getName().trim());
+	        stmt.setDouble(2, product.getWholesalerPrice().getValue());
+	        stmt.setBoolean(3, product.isAvailable());
+	        stmt.setInt(4, product.getStock());
+
+	        return stmt.executeUpdate();
+
+	    } catch (SQLException e) {
+
+	        if ("23505".equals(e.getSQLState())) {
+	            throw new SQLException("Ya existe un producto con ese nombre.", e);
+	        }
+
+	        throw e;
+	    }
 	}
 
 	@Override
