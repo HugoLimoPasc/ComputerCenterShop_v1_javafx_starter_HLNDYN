@@ -111,7 +111,16 @@ i hem posat clean javafx:run perque arrenqui.]**
 
 ### RA2-ISSUE-04 · Implementar insercio amb PreparedStatement
 
-
+- Estat: **comprovat**.
+- Persona que l'ha iniciat: Hugo Limoso Pascual.
+- Problema inicial: insertProduct() no estava implementat i no es podien inserir productes a la base de dades.
+- Decisió aplicada: Implementar la inserció de productes amb PreparedStatement i try-with-resources, utilitzant una consulta parametritzada.
+- Canvis fets: A src/dao/ProductDaoImplJDBC.java s'ha implementat el mètode insertProduct(). S'han afegit validacions per evitar noms duplicats o buits, preus negatius, estoc negatiu i productes nuls. El mètode retorna - les files afectades amb executeUpdate().
+- Prova realitzada: Hem inserit productes des de l'aplicació i comprovat amb H2 que es guarden correctament. També hem comprovat que no es permeten noms duplicats, preus negatius ni estoc negatiu.
+- Evidència: Captures de pantalla guardades a img/ISSUE-04.
+- Commit o pull request: [84eefcd](https://github.com/HugoLimoPasc/ComputerCenterShop_v1_javafx_starter_HLNDYN/commit/84eefcd).
+- Explicació individual: Funcionament del PreparedStatement, assignació de paràmetres, validació de dades, retorn de files afectades i tancament automàtic de recursos.
+- Ús d'IA: ChatGPT ha ajudat a implementar el mètode i les validacions. Hem comprovat el funcionament amb Eclipse i H2.
 
 ### RA2-ISSUE-06 · [*Implementar eliminacio controlada*]
 
