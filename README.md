@@ -117,7 +117,7 @@ Dupliqueu aquest bloc per a cada *issue* que completeu. Escriviu amb les vostres
 - Canvis fets: **He implementat el mètode `deleteProduct(String name)` per eliminar productes pel nom i retornar el nombre de files afectades.**
 - Prova realitzada: **He eliminat el producte "SSD 1TB" i he verificat amb la consulta `SELECT * FROM PRODUCTS` que ja no apareix a la taula.**
 - Evidència: **Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDY\img\ISSUE-06**
-- *Commit* o *pull request*: **.**
+- *Commit* o *pull request*: **c6e0177**
 - Explicació individual: **He implementat l'eliminació controlada de productes mitjançant JDBC.**
 - Ús d'IA, si n'hi ha hagut: **.**
 

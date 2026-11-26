@@ -128,7 +128,7 @@ public class ProductDaoImplJDBC implements ProductDao {
 		    }
 	}
 
-	// TODO RA2-ISSUE-06: eliminar per nom i comprovar files afectades..
+	// TODO RA2-ISSUE-06: eliminar per nom i comprovar files afectades.
 
 	
 	
