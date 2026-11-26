@@ -49,7 +49,7 @@ Marqueu una tasca quan la prova i el rastre al repositori estiguin recollits. El
 
 - [ ] [RA2-ISSUE-04 · Inserció de dades](issues/RA2-ISSUE-04-inserir-producte-preparedstatement.md)
 - [ ] [RA2-ISSUE-05 · Actualització d'estoc](issues/RA2-ISSUE-05-actualitzar-estoc.md)
-- [ ] [RA2-ISSUE-06 · Eliminació controlada](issues/RA2-ISSUE-06-eliminar-producte-controlat.md)
+- [x] [RA2-ISSUE-06 · Eliminació controlada](issues/RA2-ISSUE-06-eliminar-producte-controlat.md)
 - [ ] [RA2-ISSUE-07 · Consultes i resultats](issues/RA2-ISSUE-07-consultar-inventari-resultset.md)
 
 ### M3 · Robustesa JDBC
@@ -68,32 +68,31 @@ Marqueu una tasca quan la prova i el rastre al repositori estiguin recollits. El
 
 Dupliqueu aquest bloc per a cada *issue* que completeu. Escriviu amb les vostres paraules i enllaceu només proves i *commits* del vostre repositori.
 
-### RA2-ISSUE-01 · [*Preparar projecte JDBC local*]
+### RA2-ISSUE-01 · *Preparar projecte JDBC local*
 
 - Estat: **comprovat**
-- Persona que l'ha iniciat: **[Nerea Diego]**
-- Problema inicial: **[El projecte estava sense configurar ni executar.]**
-- Decisió aplicada: **[Hem decidit revisar la configuració del pom.xml, i hem executat el projecte.]**
-- Canvis fets: **[No hem fet ningun canvia.]**
-- Prova realitzada: **[Hem executat el programa i em vist que si funciona, fent un maven build
-i hem posat clean javafx:run perque arrenqui.]**
-- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-01]**
-- *Commit* o *pull request*: **[7df597b]**
-- Explicació individual: **[.]**
-- Ús d'IA, si n'hi ha hagut: **[.]**
+- Persona que l'ha iniciat: **Nerea Diego**
+- Problema inicial: **El projecte estava sense configurar ni executar.**
+- Decisió aplicada: **Hem decidit revisar la configuració del pom.xml, i hem executat el projecte.**
+- Canvis fets: **No hem fet ningun canvia.**
+- Prova realitzada:**Hem executat el programa i em vist que si funciona, fent un maven build i hem posat clean javafx:run perque arrenqui.**
+- Evidència:**Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-01**
+- *Commit* o *pull request*: **7df597b**
+- Explicació individual: **He revisat la configuració inicial del projecte, les dependències JDBC i l'execució de la demo per identificar el primer issue pendent.**
+- Ús d'IA, si n'hi ha hagut: **.**
 
-### RA2-ISSUE-02 · [*Implementar connector, URL i connexio*]
+### RA2-ISSUE-02 · *Implementar connector, URL i connexio*
 
 - Estat: **comprovat**
-- Persona que l'ha iniciat: **[Nerea]**
-- Problema inicial: **[L'aplicació no podia connectar-se a la base de dades perquè el mètode connect() no estava implementat.]**
-- Decisió aplicada: **[Hem implementat la connexió JDBC utilitzant, conn = DriverManager.getConnection(url, user, password);]**
-- Canvis fets: **[Hem modificat el fitxer ProductDaoImplJDBC.java]**
-- Prova realitzada: **[Hem executat l'aplicació i la connexió ja no mostra l'error RA2-ISSUE-02]**
-- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-02]**
-- *Commit* o *pull request*: **[10335e4]**
-- Explicació individual: **[.]**
-- Ús d'IA, si n'hi ha hagut: **[.]**
+- Persona que l'ha iniciat: **Nerea**
+- Problema inicial: **L'aplicació no podia connectar-se a la base de dades perquè el mètode connect() no estava implementat.**
+- Decisió aplicada: **Hem implementat la connexió JDBC utilitzant, conn = DriverManager.getConnection(url, user, password);**
+- Canvis fets: **Hem modificat el fitxer ProductDaoImplJDBC.java]**
+- Prova realitzada: **Hem executat l'aplicació i la connexió ja no mostra l'error RA2-ISSUE-02**
+- Evidència: **Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-02**
+- *Commit* o *pull request*: **10335e4**
+- Explicació individual: **He implementat el mètode connect() per crear la connexió JDBC amb H2 utilitzant DriverManager.**
+- Ús d'IA, si n'hi ha hagut: **.**
 
 ### RA2-ISSUE-03 · Estructura relacional
 
@@ -108,18 +107,19 @@ i hem posat clean javafx:run perque arrenqui.]**
 - Explicació individual: Creació de taules, clau forana, àlies, seed i tancament automàtic de recursos.
 - Ús d'IA: ChatGPT ha proposat codi i ajudat a resoldre errors. Hem comprovat el resultat amb Eclipse i H2. Cal confirmar amb el professorat si la proposta de codi és compatible amb IA-1.
 
+
 ### RA2-ISSUE-06 · [*Implementar eliminacio controlada*]
 
 - Estat: **comprovat**
-- Persona que l'ha iniciat: **[Nerea]**
-- Problema inicial: **[.]**
-- Decisió aplicada: **[;]**
-- Canvis fets: **[.]**
-- Prova realitzada: **[]**
-- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-06]**
-- *Commit* o *pull request*: **[¡]**
-- Explicació individual: **[.]**
-- Ús d'IA, si n'hi ha hagut: **[.]**
+- Persona que l'ha iniciat: **Nerea Diego**
+- Problema inicial: **El mètode `deleteProduct()` no estava implementat i no es podien eliminar productes de la base de dades.**
+- Decisió aplicada: **Utilitzar un `PreparedStatement` amb una consulta SQL `DELETE` parametritzada.**
+- Canvis fets: **He implementat el mètode `deleteProduct(String name)` per eliminar productes pel nom i retornar el nombre de files afectades.**
+- Prova realitzada: **He eliminat el producte "SSD 1TB" i he verificat amb la consulta `SELECT * FROM PRODUCTS` que ja no apareix a la taula.**
+- Evidència: **Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDY\img\ISSUE-06**
+- *Commit* o *pull request*: **.**
+- Explicació individual: **He implementat l'eliminació controlada de productes mitjançant JDBC.**
+- Ús d'IA, si n'hi ha hagut: **.**
 
 ## Proves que hem de poder repetir
 

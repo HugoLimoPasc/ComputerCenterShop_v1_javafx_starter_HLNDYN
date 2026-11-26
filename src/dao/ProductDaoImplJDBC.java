@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.util.ArrayList;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 
 import model.Product;
 
@@ -117,10 +118,20 @@ public class ProductDaoImplJDBC implements ProductDao {
 
 	@Override
 	public int deleteProduct(String name) throws SQLException {
-		// TODO RA2-ISSUE-06: eliminar per nom i comprovar files afectades.
-		throw pending("RA2-ISSUE-06 pendent: implementa eliminacio controlada.");
+		 requireConnection();
+
+		    String sql = "DELETE FROM products WHERE name = ?";
+
+		    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+		        stmt.setString(1, name);
+		        return stmt.executeUpdate();
+		    }
 	}
 
+	// TODO RA2-ISSUE-06: eliminar per nom i comprovar files afectades.
+
+	
+	
 	@Override
 	public void registerStockChange(String name, int unitsToAdd) throws SQLException {
 		// TODO RA2-ISSUE-09: desactivar autoCommit, actualitzar estoc, inserir historial, commit o rollback.
