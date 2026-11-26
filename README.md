@@ -6,9 +6,9 @@
 
 - Integrants: Hugo Limoso Pascual, Yoselin Montserrat Necpas Sandoval i Nerea Diego Aldazabal
 - Repositori compartit: https://github.com/HugoLimoPasc/ComputerCenterShop_v1_javafx_starter_HLNDYN
-- Branca de treball habitual: `hugo`
+- Branca de treball habitual: 'main'
 - Data d'inici: 2026-11-10
-- Última actualització: 2026-11-24
+- Última actualització: 2026-11-26
 
 ## Propòsit del projecte
 
@@ -41,8 +41,8 @@ Marqueu una tasca quan la prova i el rastre al repositori estiguin recollits. El
 
 ### M1 · Base JDBC operativa
 
-- [ ] [RA2-ISSUE-01 · Preparar el projecte JDBC](issues/RA2-ISSUE-01-preparar-projecte-jdbc.md)
-- [ ] [RA2-ISSUE-02 · Connector, URL i connexió](issues/RA2-ISSUE-02-revisar-connector-url-connexio.md)
+- [x] [RA2-ISSUE-01 · Preparar el projecte JDBC](issues/RA2-ISSUE-01-preparar-projecte-jdbc.md)
+- [x] [RA2-ISSUE-02 · Connector, URL i connexió](issues/RA2-ISSUE-02-revisar-connector-url-connexio.md)
 - [x] [RA2-ISSUE-03 · Estructura relacional](issues/RA2-ISSUE-03-crear-estructura-relacional.md)
 
 ### M2 · Operacions relacionals principals
@@ -68,18 +68,58 @@ Marqueu una tasca quan la prova i el rastre al repositori estiguin recollits. El
 
 Dupliqueu aquest bloc per a cada *issue* que completeu. Escriviu amb les vostres paraules i enllaceu només proves i *commits* del vostre repositori.
 
+### RA2-ISSUE-01 · [*Preparar projecte JDBC local*]
+
+- Estat: **comprovat**
+- Persona que l'ha iniciat: **[Nerea Diego]**
+- Problema inicial: **[El projecte estava sense configurar ni executar.]**
+- Decisió aplicada: **[Hem decidit revisar la configuració del pom.xml, i hem executat el projecte.]**
+- Canvis fets: **[No hem fet ningun canvia.]**
+- Prova realitzada: **[Hem executat el programa i em vist que si funciona, fent un maven build
+i hem posat clean javafx:run perque arrenqui.]**
+- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-01]**
+- *Commit* o *pull request*: **[7df597b]**
+- Explicació individual: **[.]**
+- Ús d'IA, si n'hi ha hagut: **[.]**
+
+### RA2-ISSUE-02 · [*Implementar connector, URL i connexio*]
+
+- Estat: **comprovat**
+- Persona que l'ha iniciat: **[Nerea]**
+- Problema inicial: **[L'aplicació no podia connectar-se a la base de dades perquè el mètode connect() no estava implementat.]**
+- Decisió aplicada: **[Hem implementat la connexió JDBC utilitzant, conn = DriverManager.getConnection(url, user, password);]**
+- Canvis fets: **[Hem modificat el fitxer ProductDaoImplJDBC.java]**
+- Prova realitzada: **[Hem executat l'aplicació i la connexió ja no mostra l'error RA2-ISSUE-02]**
+- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-02]**
+- *Commit* o *pull request*: **[10335e4]**
+- Explicació individual: **[.]**
+- Ús d'IA, si n'hi ha hagut: **[.]**
+
 ### RA2-ISSUE-03 · Estructura relacional
 
 - Estat: **comprovat**.
 - Persona que l'ha iniciat: Hugo Limoso Pascual.
-- Problema inicial: `initSchema()` no estava implementat.
-- Decisió aplicada: Crear l'esquema amb DDL, `Statement` i `try-with-resources`.
-- Canvis fets: A `src/dao/ProductDaoImplJDBC.java` es creen `products`, `inventory_history` amb clau forana i l'àlies `STOCK_ALERT_LIMIT`. El seed només s'insereix si `products` és buida.
-- Prova realitzada: Hem iniciat l'aplicació i comprovat amb H2 les dues taules, l'àlies amb `SCRIPT NODATA` i els tres productes inicials sense duplicats després de reinicialitzar.
+- Problema inicial: 'initSchema()' no estava implementat.
+- Decisió aplicada: Crear l'esquema amb DDL, 'Statement' i 'try-with-resources'.
+- Canvis fets: A 'src/dao/ProductDaoImplJDBC.java' es creen 'products', 'inventory_history' amb clau forana i l'àlies 'STOCK_ALERT_LIMIT'. El seed només s'insereix si 'products' és buida.
+- Prova realitzada: Hem iniciat l'aplicació i comprovat amb H2 les dues taules, l'àlies amb 'SCRIPT NODATA' i els tres productes inicials sense duplicats després de reinicialitzar.
 - Evidència: Missatge «Estructura relacional inicialitzada» i comprovacions a H2 descrites en aquest apartat. No hi ha captures enllaçades.
 - *Commit* o *pull request*: [19a68f4](https://github.com/HugoLimoPasc/ComputerCenterShop_v1_javafx_starter_HLNDYN/commit/19a68f4).
 - Explicació individual: Creació de taules, clau forana, àlies, seed i tancament automàtic de recursos.
 - Ús d'IA: ChatGPT ha proposat codi i ajudat a resoldre errors. Hem comprovat el resultat amb Eclipse i H2. Cal confirmar amb el professorat si la proposta de codi és compatible amb IA-1.
+
+### RA2-ISSUE-06 · [*Implementar eliminacio controlada*]
+
+- Estat: **comprovat**
+- Persona que l'ha iniciat: **[Nerea]**
+- Problema inicial: **[.]**
+- Decisió aplicada: **[;]**
+- Canvis fets: **[.]**
+- Prova realitzada: **[]**
+- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-06]**
+- *Commit* o *pull request*: **[¡]**
+- Explicació individual: **[.]**
+- Ús d'IA, si n'hi ha hagut: **[.]**
 
 ## Proves que hem de poder repetir
 
@@ -95,9 +135,9 @@ Dupliqueu aquest bloc per a cada *issue* que completeu. Escriviu amb les vostres
 
 | Data | *Issue* | Decisió o dubte | Com s'ha resolt | Referència |
 | --- | --- | --- | --- | --- |
-| 2026-11-23 | RA2-ISSUE-03 | Evitar duplicats | `IF NOT EXISTS` i seed només amb la taula buida | [19a68f4](https://github.com/HugoLimoPasc/ComputerCenterShop_v1_javafx_starter_HLNDYN/commit/19a68f4) |
-| 2026-11-23 | RA2-ISSUE-03 | Error de càrrega JavaFX | Eliminat `columnResizePolicy` de `ShopView.fxml` durant les proves | Arrencada correcta |
-| 2026-11-24 | RA2-ISSUE-03 | H2 no troba la classe Java de l'àlies | Registre verificat amb `SCRIPT NODATA`; execució de l'àlies no verificada | Comprovació descrita a la ISSUE-03 |
+| 2026-11-23 | RA2-ISSUE-03 | Evitar duplicats | 'IF NOT EXISTS' i seed només amb la taula buida | [19a68f4](https://github.com/HugoLimoPasc/ComputerCenterShop_v1_javafx_starter_HLNDYN/commit/19a68f4) |
+| 2026-11-23 | RA2-ISSUE-03 | Error de càrrega JavaFX | Eliminat 'columnResizePolicy' de 'ShopView.fxml' durant les proves | Arrencada correcta |
+| 2026-11-24 | RA2-ISSUE-03 | H2 no troba la classe Java de l'àlies | Registre verificat amb 'SCRIPT NODATA'; execució de l'àlies no verificada | Comprovació descrita a la ISSUE-03 |
 
 ## Ús responsable d'IA
 
