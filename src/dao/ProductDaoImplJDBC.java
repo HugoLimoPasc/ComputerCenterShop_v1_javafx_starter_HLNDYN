@@ -147,7 +147,7 @@ public class ProductDaoImplJDBC implements ProductDao {
 
 	        throw e;
 	    }
-	}
+	} 
 
 	@Override
 	public int updateStock(String name, int newStock) throws SQLException {
