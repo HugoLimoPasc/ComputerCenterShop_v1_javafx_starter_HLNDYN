@@ -136,7 +136,7 @@ public class ProductDaoImplJDBC implements ProductDao {
 	        stmt.setDouble(2, product.getWholesalerPrice().getValue());
 	        stmt.setBoolean(3, product.isAvailable());
 	        stmt.setInt(4, product.getStock());
-//
+////
 	        return stmt.executeUpdate();
 
 	    } catch (SQLException e) {
