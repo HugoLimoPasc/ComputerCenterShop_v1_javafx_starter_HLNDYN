@@ -108,6 +108,19 @@ i hem posat clean javafx:run perque arrenqui.]**
 - Explicació individual: Creació de taules, clau forana, àlies, seed i tancament automàtic de recursos.
 - Ús d'IA: ChatGPT ha proposat codi i ajudat a resoldre errors. Hem comprovat el resultat amb Eclipse i H2. Cal confirmar amb el professorat si la proposta de codi és compatible amb IA-1.
 
+### RA2-ISSUE-06 · [*Implementar actualització d'estoc*]
+
+- Estat: **comprovat**
+- Persona que l'ha iniciat: **[Yoselin Necpas]**
+- Problema inicial: **[El mètode updateStock() no estava implementat i no permetia modificar l'estoc dels productes a la base de dades.]**
+- Decisió aplicada: **[Hem decidit utilitzar una consulta SQL UPDATE amb PreparedStatement per actualitzar el camp stock i modificar automàticament la disponibilitat (available) segons les unitats disponibles.]**
+- Canvis fets: **[He fet als canvis al fitxer ProductDaoImplJDBC.java, també he implementat el mètode updateStock() i s'ha afegit l'import de PreparedStatement.]**
+- Prova realitzada: **[He provat l'actualització de l'estoc d'un producte. En establir l'estoc a 0, el camp available passa a false, i quan l'estoc és superior a 0, passa a true.]**
+- Evidència: **[Aquesta es la ruta ComputerCenterShop_v1_javafx_starter_HLNDYN\img\ISSUE-06 i es pot veure el missatge de que l'estoc ha sigut actulitzat.]**
+- *Commit* o *pull request*: **[]**
+- Explicació individual: **[El funcionament de PreparedStatement, l'ús dels paràmetres amb setInt(), setBoolean() i setString(), i el retorn de executeUpdate() per saber quantes files s'han modificat.]**
+- Ús d'IA, si n'hi ha hagut: **[En el meu cas l'he utilitzat per rebre orientació sobre la implementació de updateStock i s'ha revisat el codi i s'ha comprovat el funcionament de la implementació]**
+
 ### RA2-ISSUE-06 · [*Implementar eliminacio controlada*]
 
 - Estat: **comprovat**
