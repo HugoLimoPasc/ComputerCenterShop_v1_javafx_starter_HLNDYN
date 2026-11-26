@@ -47,7 +47,7 @@ Marqueu una tasca quan la prova i el rastre al repositori estiguin recollits. El
 
 ### M2 · Operacions relacionals principals
 
-- [ ] [RA2-ISSUE-04 · Inserció de dades](issues/RA2-ISSUE-04-inserir-producte-preparedstatement.md)
+- [x] [RA2-ISSUE-04 · Inserció de dades](issues/RA2-ISSUE-04-inserir-producte-preparedstatement.md)
 - [ ] [RA2-ISSUE-05 · Actualització d'estoc](issues/RA2-ISSUE-05-actualitzar-estoc.md)
 - [ ] [RA2-ISSUE-06 · Eliminació controlada](issues/RA2-ISSUE-06-eliminar-producte-controlat.md)
 - [ ] [RA2-ISSUE-07 · Consultes i resultats](issues/RA2-ISSUE-07-consultar-inventari-resultset.md)
@@ -95,7 +95,7 @@ i hem posat clean javafx:run perque arrenqui.]**
 - Explicació individual: **[.]**
 - Ús d'IA, si n'hi ha hagut: **[.]**
 
-### RA2-ISSUE-03 · Estructura relacional
+### RA2-ISSUE-03 · Implementar estructura relacional
 
 - Estat: **comprovat**.
 - Persona que l'ha iniciat: Hugo Limoso Pascual.
@@ -107,6 +107,11 @@ i hem posat clean javafx:run perque arrenqui.]**
 - *Commit* o *pull request*: [19a68f4](https://github.com/HugoLimoPasc/ComputerCenterShop_v1_javafx_starter_HLNDYN/commit/19a68f4).
 - Explicació individual: Creació de taules, clau forana, àlies, seed i tancament automàtic de recursos.
 - Ús d'IA: ChatGPT ha proposat codi i ajudat a resoldre errors. Hem comprovat el resultat amb Eclipse i H2. Cal confirmar amb el professorat si la proposta de codi és compatible amb IA-1.
+
+
+### RA2-ISSUE-04 · Implementar insercio amb PreparedStatement
+
+
 
 ### RA2-ISSUE-06 · [*Implementar eliminacio controlada*]
 
